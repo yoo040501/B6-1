@@ -110,6 +110,8 @@ order_id | customer_id
 3. `orders`
 4. `order_item`
 
+
+![테이블설정](./screenshot/tables.png)
 각 테이블의 역할은 다음과 같습니다.
 
 ### customer
@@ -630,22 +632,22 @@ CLI 실행 결과 전체를 텍스트 파일로 저장할 수도 있습니다.
 
 ```bash
 docker exec -i mysql-db \
-mysql -u root -p1234 < queries.sql > results/query_results.txt 2>&1
+mysql -u root -p1234 < sql/queries.sql > results/query_results.txt 2>&1
 ```
 
 최종 결과를 다시 만들 때는 데이터 상태를 초기화하기 위해 다음 순서로 실행합니다.
 
 ```bash
-docker exec -i mysql-db mysql -u root -p1234 < schema.sql
+docker exec -i mysql-db mysql -u root -p1234 < sql/schema.sql
 ```
 
 ```bash
-docker exec -i mysql-db mysql -u root -p1234 < sample_data.sql
+docker exec -i mysql-db mysql -u root -p1234 < sql/sample_data.sql
 ```
 
 ```bash
 docker exec -i mysql-db \
-mysql -u root -p1234 < queries.sql > results/query_results.txt 2>&1
+mysql -u root -p1234 < sql/queries.sql > results/query_results.txt 2>&1
 ```
 
 ---
@@ -655,19 +657,19 @@ mysql -u root -p1234 < queries.sql > results/query_results.txt 2>&1
 ### 스키마 생성
 
 ```bash
-docker exec -i mysql-db mysql -u root -p1234 < schema.sql
+docker exec -i mysql-db mysql -u root -p1234 < sql/schema.sql
 ```
 
 ### 샘플 데이터 입력
 
 ```bash
-docker exec -i mysql-db mysql -u root -p1234 < sample_data.sql
+docker exec -i mysql-db mysql -u root -p1234 < sql/sample_data.sql
 ```
 
 ### 핵심 쿼리 실행
 
 ```bash
-docker exec -i mysql-db mysql -u root -p1234 < queries.sql
+docker exec -i mysql-db mysql -u root -p1234 < sql/queries.sql
 ```
 
 ---
