@@ -103,6 +103,8 @@ order_id | customer_id
 
 카페에서 발생하는 고객, 메뉴, 주문, 주문 상세 정보를 관리하는 데이터베이스를 설계했습니다.
 
+![다이어그램](./screenshot/diagram.png)
+
 총 4개의 테이블을 사용합니다.
 
 1. `customer`
@@ -117,21 +119,21 @@ order_id | customer_id
 ### customer
 
 카페를 이용하는 고객 정보를 저장합니다.
-
+![고객정보설정](./screenshot/customer.png)
 ### menu
 
 판매하는 메뉴와 가격, 카테고리를 저장합니다.
-
+![메뉴설정](./screenshot/menu.png)
 ### orders
 
 고객이 수행한 주문 한 건에 대한 정보를 저장합니다.
-
+![오더설정](./screenshot/orders.png)
 ### order_item
 
 각 주문에 어떤 메뉴가 몇 개 포함되어 있는지 저장합니다.
+![주문메뉴설정](./screenshot/order_item.png)
 
 ---
-
 ## 5. 테이블 관계
 
 테이블의 관계는 다음과 같습니다.
@@ -264,7 +266,7 @@ customer_id = 999 없음
 ```
 
 이것이 FK를 이용한 **참조 무결성**입니다.
-
+![데이터무결성](./screenshot/데이터%20무결성.png)
 ---
 
 ## 8. 컬럼 타입 선정
@@ -430,7 +432,7 @@ INNER JOIN orders o
 ```
 
 주문이 없는 고객은 결과에서 제외됩니다.
-
+![INNERJOIN](./screenshot/INNER%20JOIN.png)
 ### LEFT JOIN
 
 왼쪽 테이블의 데이터는 모두 유지합니다.
@@ -453,6 +455,8 @@ name   | order_id
 ```
 
 처럼 출력됩니다.
+
+![LEFTJOIN](./screenshot/LEFT%20JOIN.png)
 
 즉:
 
@@ -482,6 +486,7 @@ LEFT JOIN orders o
 GROUP BY c.customer_id, c.name;
 ```
 
+![GROUPBY](./screenshot/GROUP%20BY.png)
 메뉴별 판매 수량은 `SUM()`을 사용했습니다.
 
 ```sql
@@ -522,6 +527,8 @@ FROM menu;
 
 전체 평균 가격을 계산하고, 외부 쿼리가 그 결과보다 비싼 메뉴를 찾습니다.
 
+![서브쿼리](./screenshot/서브쿼리.png)
+
 ---
 
 ## 15. UPDATE와 DELETE
@@ -535,6 +542,7 @@ UPDATE menu
 SET price = 4700
 WHERE name = '아메리카노';
 ```
+![업데이트](./screenshot/UPDATE.png)
 
 ### DELETE
 
