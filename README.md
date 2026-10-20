@@ -849,8 +849,8 @@ database-mission/
 │   ├── query15.png
 │   └── query_results.txt
 │
-├── erd/
-│   └── cafe_erd.png
+├── screenshot/
+│
 │
 └── README.md
 ```
@@ -871,9 +871,9 @@ database-mission/
 
 각 SQL의 실행 결과를 저장합니다.
 
-### erd/
+### screenshot/
 
-테이블 관계를 나타내는 ERD 이미지를 저장합니다.
+테이블 관계를 나타내는 이미지를 저장합니다.
 
 ---
 
